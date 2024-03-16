@@ -1,0 +1,14 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: datacachepvc-1
+spec:
+  storageClassName: datacache-sc
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 100Mi
+  selector:
+    matchLabels:
+      name: "datacache"

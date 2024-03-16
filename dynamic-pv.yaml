@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: datacachepv-1
+  labels:
+   name: datacache
+spec:
+  storageClassName: datacache-sc
+  persistentVolumeReclaimPolicy: Delete
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 100Mi
+  hostPath:
+    path: /var/Cachebackup
+    type: DirectoryOrCreate
